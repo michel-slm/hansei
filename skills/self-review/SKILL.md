@@ -129,7 +129,19 @@ other people's and future work better:
   report-visible evidence).
 - Talks, demos, and written knowledge-sharing (a talk may only be
   visible as slide commits — ask).
-- Reviews framed as teaching, when that's what they were.
+- Reviews count as mentoring/onboarding **only when the requester is
+  demonstrably new** — verify before claiming. For Fedora the
+  mechanical check: a review request that **blocks the
+  FE-NEEDSPONSOR tracker (bug 177841)** comes from a packager with
+  no sponsor yet — reviewing (and sponsoring) those is
+  definitionally onboarding; query the review bugs' `blocks` field
+  via the Bugzilla REST API. Fallback heuristic: the requester's FAS
+  group memberships / existing package access (a seasoned SIG
+  member's stack review is not onboarding). Unverified, the honest
+  framing is that reviews *unblock others* and build reciprocity —
+  maintainers who get their packages reviewed are more willing to
+  review yours — which belongs under engineering excellence, not
+  people.
 
 Default mapping when the evaluation only has two buckets: fold
 Direction and People into engineering excellence. When an item
