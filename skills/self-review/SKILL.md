@@ -1,6 +1,6 @@
 ---
 name: self-review
-description: Turn a sandogasa-report activity export (markdown) into a first-person self-review narrative for a performance evaluation, clustered into "project work" and "engineering excellence / better engineering". Use when the user asks to draft, structure, or polish a self-review or perf narrative from an activity report. Pass the report path (and optionally a period label like 2026H1) as args.
+description: Turn a sandogasa-report activity export (markdown) into a first-person self-review narrative for a performance evaluation, clustered along the evaluation's axes — project work, engineering excellence / better engineering, direction (committee and distribution leadership), and people (mentoring, onboarding, talks). Use when the user asks to draft, structure, or polish a self-review or perf narrative from an activity report. Pass the report path (and optionally a period label like 2026H1) as args.
 ---
 
 # Self-review narrative from a sandogasa-report export
@@ -56,6 +56,18 @@ Before writing, list (for your own use, or show the user on request):
   requests submitted), major version migrations, upstream PRs with
   real substance, reviews done for other people.
 - Anything security-shaped: CVE closures, RUSTSEC responses.
+- Formal change proposals behind the big efforts (e.g. Fedora Change
+  pages on the wiki): they name co-owners, the accepted status, the
+  target release, and the *rationale* — which upgrades a pile of
+  updates into "executed an accepted distribution Change", and counts
+  toward direction when the user authored it. Don't rely on the user
+  volunteering them: fetch the target release's **ChangeSet page**
+  (e.g. `Releases/44/ChangeSet`) and list every Change the user owns.
+  Caveat: the wiki proposal is the *plan*; what landed may differ
+  (different versions, different packaging shape) — the activity
+  report is the ground truth for delivery, so describe execution from
+  report evidence and flag divergences instead of restating the
+  proposal as fact.
 
 Every number and link in the final narrative must come from this
 inventory or from the user — never invent or extrapolate.
@@ -67,16 +79,18 @@ covering:
 
 1. Which of the big items were **planned deliverables** (mapped to
    team/project goals) vs self-directed? This drives the clustering.
-2. **Invisible work** to include: meetings chaired, mentoring,
-   design/process documents, incident response, community governance
-   (e.g. committee work) — activity reports don't capture these.
-3. **Audience constraints**: length limit, form fields, whether
-   "engineering excellence"/"better engineering" is the reviewer's
-   actual rubric wording, first person vs third person.
+2. **Which axes** the evaluation actually uses (two-bucket project
+   work + better engineering, or four with direction and people) and
+   its format: length limit, form fields, first vs third person.
+3. **Invisible work** to include, per axis: committee/SIG leadership
+   and policy work (direction), meetings chaired, mentoring and
+   onboarding, talks (people), incident response — activity reports
+   don't capture these, and their specifics (role names, dates,
+   counts) must come from the user, never invented.
 4. Anything in the report to **exclude** (other-hat work not relevant
    to this evaluation).
 
-## 4. Cluster: project work vs engineering excellence
+## 4. Cluster along the evaluation's axes
 
 **Project work** — planned deliverables and their outcomes:
 
@@ -91,8 +105,7 @@ covering:
 **Engineering excellence / better engineering** — work that makes
 other people's and future work better:
 
-- Reviews done for others (package reviews, PR/MR reviews) and
-  co-maintainer onboarding.
+- Reviews done for others (package reviews, PR/MR reviews).
 - Security response: CVE triage, advisory-driven bumps, closures.
 - Health cleanups: FTBFS/FTI fixes, nonresponsive-maintainer and
   policy processes, dead-weight removal.
@@ -101,8 +114,27 @@ other people's and future work better:
 - Upstream fixes that unblock downstream, documentation, process
   improvements.
 
-When an item plausibly fits both, put it where the user's goals say
-it belongs and let the other angle be one clause, not a second entry.
+**Direction** — setting or steering where a project/community goes
+(mostly invisible in activity reports; source it from the user):
+
+- Elected/appointed committee service (e.g. a distribution steering
+  committee): membership, chairing, policy decisions driven.
+- SIG / working-group leadership: roadmap, priorities, process.
+- Proposals and policy changes authored or shepherded.
+
+**People** — growing other contributors:
+
+- Mentoring and onboarding (new packagers, co-maintainers invited
+  and coached — co-maintainer offers in review/branch requests are
+  report-visible evidence).
+- Talks, demos, and written knowledge-sharing (a talk may only be
+  visible as slide commits — ask).
+- Reviews framed as teaching, when that's what they were.
+
+Default mapping when the evaluation only has two buckets: fold
+Direction and People into engineering excellence. When an item
+plausibly fits several axes, put it where the user's goals say it
+belongs and let the other angle be one clause, not a second entry.
 
 ## 5. Write the narrative
 
@@ -123,8 +155,10 @@ it belongs and let the other angle be one clause, not a second entry.
 
 ## 6. Output and iteration
 
-Write the draft next to the report (e.g.
-`scratch/self-review-<period>.md`), show the user the two cluster
-headlines first, and iterate. Expect wording rounds: this text goes
-in front of the user's management, so the user has final say on every
-claim.
+Write the draft next to the report as
+`scratch/self-review-<period>-pass1.md`, show the user the cluster
+headlines first, and iterate. **Every revision round writes a new
+file** (`-pass2`, `-pass3`, …) — never overwrite an earlier pass, so
+the user can diff passes and recover dropped phrasing. Expect wording
+rounds: this text goes in front of the user's management, so the user
+has final say on every claim.
