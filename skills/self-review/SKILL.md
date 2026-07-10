@@ -56,6 +56,17 @@ Before writing, list (for your own use, or show the user on request):
   requests submitted), major version migrations, upstream PRs with
   real substance, reviews done for other people.
 - Anything security-shaped: CVE closures, RUSTSEC responses.
+- **Meeting minutes and logs** (e.g. meetbot archives) for the
+  direction axis. Attendance and chairing counts set the baseline —
+  but chairing is *procedural* (agendas, minutes), not a claim to
+  the decisions made. The substance is the user's own record in the
+  full `.log.txt` transcripts: extract their votes per topic and
+  their statements on marquee items. Prioritize **rejected
+  proposals** and **non-unanimous votes** — how the user voted
+  relative to the outcome (defended a change against reversion,
+  abstained while shaping a constructive rejection, iterated a
+  proposal to approvable) is where judgment shows. A short script
+  against the archive beats asking the user to remember.
 - Formal change proposals behind the big efforts (e.g. Fedora Change
   pages on the wiki): they name co-owners, the accepted status, the
   target release, and the *rationale* — which upgrades a pile of
