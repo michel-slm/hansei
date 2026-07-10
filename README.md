@@ -23,6 +23,29 @@ every number traces back to the report.
 /self-review scratch/report-michel-2026h1-detailed2.md 2026H1
 ```
 
+#### Generating the raw material
+
+The skill works from a
+[sandogasa-report](https://github.com/slopfest/sandogasa) export, so
+set that up first:
+
+1. Run `sandogasa-report config -c <config.toml>` once — it walks
+   every forge instance used by the config's domains and prompts for
+   the full credential set (usernames and API tokens for
+   GitLab/GitHub/Forgejo/Sourcehut, FAS username, Bugzilla email),
+   which covers any domain combination you later report on. See the
+   sandogasa-report README's Configuration section for the
+   main-config / per-user-overlay split.
+2. Export the period with `--detailed` (the skill wants individual
+   items, not just counts):
+
+   ```sh
+   sandogasa-report report -c config.toml --user <you> \
+       -d <domain> [-d <domain> ...] \
+       --since 2026-01-01 --until 2026-07-01 \
+       --detailed -o report-2026h1.md
+   ```
+
 ## Installation
 
 Symlink the skill(s) you want into your user skills directory:
