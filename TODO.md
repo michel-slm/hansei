@@ -11,5 +11,9 @@
   rules) vs half-year-specific (the four evaluation axes, Change
   mining, meeting-log deep dives); whether short-period runs should
   diff against the previous period's report rather than narrate from
-  scratch; and whether the shared core should be factored into a
-  common reference the period-specific skills include.
+  scratch.
+  - (2026-11-18) The shared core is now in `reference/`
+    (`report-format.md`, `evidence.md`); the half-year-specific parts
+    (the four axes, Change mining, meeting-log deep dives) are in
+    `skills/self-review/axes.md`. A weekly skill would load the
+    former and bring its own versions of the latter.

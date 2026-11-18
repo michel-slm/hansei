@@ -18,12 +18,18 @@ live in `skills/<name>/SKILL.md`.
 ## Skill style
 - Frontmatter `description` must say both *what* the skill does and *when* to invoke it (the description is the trigger surface), and document what `args` are expected
 - Skills instruct a model, not a shell: prefer judgment rubrics and explicit failure modes ("never invent numbers") over rigid step scripts
-- When a skill consumes another tool's output (e.g. sandogasa-report), document that format's known quirks inside the skill so they aren't rediscovered per run
+- When a skill consumes another tool's output (e.g. sandogasa-report), document that format's known quirks in the repo (sandogasa-report's in `reference/report-format.md`) so they aren't rediscovered per run
 - Drafts and generated artifacts go next to the user's input or in `scratch/`, never committed here
 
+## Layout
+- A skill's `SKILL.md` is a short loader: it names the files to read and
+  when, with paths written as `{{HANSEI_DIR}}/...`, which `setup.sh`
+  fills in at install time
+- Knowledge shared by skills that read sandogasa-report exports goes in
+  `reference/`; what only one skill needs goes in its own directory
+- Each topic file starts with a `## When to Load` section
+
 ## Dogfooding
-- To use these skills everywhere, symlink each skill into the user
-  skills directory, e.g.
-  `ln -s ~/src/github/slopfest/hansei/skills/self-review ~/.claude/skills/self-review`
-  (a per-project alternative is a symlink under that project's
-  `.claude/skills/`)
+- Install with `./setup.sh` (all skills, or name them). Rerun it after
+  changing a `SKILL.md` or moving the checkout; the other files are read
+  from the checkout

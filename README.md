@@ -56,13 +56,34 @@ set that up first:
 
 ## Installation
 
-Symlink the skill(s) you want into your user skills directory:
+Install the skills with the setup script:
 
 ```sh
-ln -s "$(pwd)/skills/self-review" ~/.claude/skills/self-review
+./setup.sh              # every skill
+./setup.sh self-review  # or only some
 ```
 
-or, for a single project, into that project's `.claude/skills/`.
+It copies each skill's `SKILL.md` to `~/.claude/skills/<name>/`,
+filling in this checkout's path; the files a skill loads are read
+from the checkout, so only a changed `SKILL.md` (or a moved checkout)
+needs a rerun. It replaces a symlink left by the earlier install
+instructions.
+
+## Layout
+
+Each skill's `SKILL.md` is a short loader that names the files to
+read and when, the way
+[review-prompts](https://github.com/slopfest/review-prompts) does:
+
+| File | Purpose | Loaded |
+|------|---------|--------|
+| `reference/report-format.md` | sandogasa-report structure and quirks | Always, before reading a report |
+| `reference/evidence.md` | Evidence inventory, never-invent and verification rules | Before drafting |
+| `skills/self-review/axes.md` | Questions to ask; evaluation axes and clustering | self-review, before clustering |
+| `skills/self-review/writing.md` | Narrative rules; pass files per revision | self-review, when drafting |
+
+`reference/` is shared by every skill that reads a sandogasa-report
+export; a skill's own directory holds what is specific to it.
 
 ## License
 

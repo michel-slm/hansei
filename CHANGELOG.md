@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Skills split into a loader and topic files
+
+`SKILL.md` now only names the files to load and when;
+sandogasa-report knowledge shared between skills moved to
+`reference/`. Install with `./setup.sh` instead of symlinking the
+skill directory: the loader needs this checkout's path filled in.
+Rerun it after pulling a change to a `SKILL.md`.
+
 ### self-review: current sandogasa-report output
 
 Item lists need `--detailed --detailed` since sandogasa-report
