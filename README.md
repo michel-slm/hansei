@@ -1,5 +1,7 @@
 # hansei
 
+[![AI-DECLARATION: copilot](https://img.shields.io/badge/䷼%20AI--DECLARATION-copilot-fee2e2?labelColor=fee2e2)](https://ai-declaration.md)
+
 hansei (反省, "self-reflection") is a collection of [Claude
 Code](https://claude.com/claude-code) skills for turning mechanical
 activity data into narratives written for humans.
