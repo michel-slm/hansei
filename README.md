@@ -22,7 +22,7 @@ like meetings chaired or mentoring), and drafts a narrative where
 every number traces back to the report.
 
 ```
-/self-review scratch/report-michel-2026h1-detailed2.md 2026H1
+/self-review scratch/report-2026h1.md 2026H1
 ```
 
 #### Generating the raw material
@@ -38,15 +38,21 @@ set that up first:
    which covers any domain combination you later report on. See the
    sandogasa-report README's Configuration section for the
    main-config / per-user-overlay split.
-2. Export the period with `--detailed` (the skill wants individual
-   items, not just counts):
+2. Export the period with `--detailed --detailed`: the skill wants
+   the individual items, and since sandogasa-report 0.24.0 a single
+   `--detailed` gives only counts per repo. `--by repo` adds a
+   per-repository table, which helps with project-level exemplars:
 
    ```sh
    sandogasa-report report -c config.toml --user <you> \
        -d <domain> [-d <domain> ...] \
-       --since 2026-01-01 --until 2026-07-01 \
-       --detailed -o report-2026h1.md
+       --since 2026-01-01 --until 2026-06-30 \
+       --detailed --detailed --by repo -o report-2026h1.md
    ```
+
+   GitHub review and comment counts come from an API that keeps only
+   recent events, so export soon after the period ends (or each
+   quarter) to keep them complete.
 
 ## Installation
 
