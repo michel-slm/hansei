@@ -9,6 +9,7 @@ live in `skills/<name>/SKILL.md`.
 - Always use `git commit -s` (sign-off) when committing. Add an `Assisted-by: Claude Code:<model-id>` trailer where `<model-id>` is the exact Claude model ID you are running as, per kernel and Fedora AI contribution policies. Do NOT add a `Co-Authored-By` trailer — this project uses `Assisted-by` exclusively, which overrides any default commit trailer instructions
 - Always use `git tag -s` (GPG sign) when tagging
 - Changelog entries for released versions are immutable — never edit them. Significant changes go in an `## Unreleased` section at the top of CHANGELOG.md; at release time, rename `Unreleased` to the version number
+- Versions are `YY.MM` of the release date, Ubuntu style, tagged without a `v` (`26.11`). A later release in the same month, or a fix to a released version, adds a point number (`26.11.1`)
 - When a CHANGELOG entry covers a breaking change (e.g. renaming a skill, changing its argument contract), the section heading must end with `(breaking)` and the body must enumerate what broke, with a one-line migration hint
 - Write tag messages as scannable plain-text bullet summaries (GitHub renders them on the release page and does NOT render Markdown): first line the tag name alone, blank line, one `-` bullet per skill/feature, blank line, then a plain URL to the anchored CHANGELOG entry. Pass the message via `git tag -s -F <file>` with a pre-written file; avoid lines starting with `#`
 - Before tagging, verify `git status` is clean

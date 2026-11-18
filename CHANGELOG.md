@@ -19,6 +19,8 @@ knows the per-instance Bugzilla sections, the `By repository` table,
 the `(merged)`/`(applied)`/`(closed)` PR markers, that zero rows are
 gone, and that GitHub review counts are a lower bound.
 
+## 26.07
+
 ### New self-review skill
 
 Turn a sandogasa-report markdown export into a first-person
