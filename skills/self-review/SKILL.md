@@ -1,6 +1,6 @@
 ---
 name: self-review
-description: Turn a sandogasa-report activity export (markdown) into a first-person self-review narrative for a performance evaluation, clustered along the evaluation's axes — project work, engineering excellence / better engineering, direction (committee and distribution leadership), and people (mentoring, onboarding, talks). Use when the user asks to draft, structure, or polish a self-review or perf narrative from an activity report. Pass the report path (and optionally a period label like 2026H1) as args.
+description: Turn a sandogasa-report activity export (markdown) into a first-person self-review narrative for a performance evaluation, clustered along the evaluation's own axes (by default project work, engineering excellence / better engineering, direction, and people). Use when the user asks to draft, structure, or polish a self-review or perf narrative from an activity report. Pass the report path (and optionally a period label like 2026H1 and the path to the evaluation's rubric) as args.
 ---
 
 # Self-review narrative from a sandogasa-report export
@@ -22,6 +22,8 @@ dump.
   from counts.
 - **Period label** (e.g. `2026H1`): from args or the report's
   `**Period:**` line.
+- **Rubric** (optional): a path to the evaluation's axes or form,
+  from args; without one, step 3 asks for it.
 
 ## Load in this order
 

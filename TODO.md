@@ -2,6 +2,12 @@
 
 ## self-review
 
+- (2026-11-20) Known limitation: the evidence sources outside the
+  report are Fedora-specific (wiki ChangeSet pages for Changes owned,
+  the FE-NEEDSPONSOR tracker for onboarding reviews). Debian is
+  planned. Other ecosystems get added when someone who uses them can
+  test the skill and give feedback.
+
 - (2026-07-10) The self-review flow proved useful enough on its first
   real run (2026H1, seven passes) that it's worth extending /
   restructuring to also generate **weekly or biweekly narratives**

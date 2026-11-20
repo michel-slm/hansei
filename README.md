@@ -12,17 +12,19 @@ activity data into narratives written for humans.
 
 Turns a [sandogasa-report](https://github.com/slopfest/sandogasa)
 markdown export into a first-person self-review narrative for a
-performance evaluation, clustered into **project work** (planned
-deliverables and their outcomes) and **engineering excellence /
-better engineering** (reviews for others, security response, health
-cleanups, tooling that removes toil). The skill reads the whole
-report, builds an evidence inventory, asks the few questions the
-report can't answer (which items were planned goals, invisible work
-like meetings chaired or mentoring), and drafts a narrative where
-every number traces back to the report.
+performance evaluation, clustered along the evaluation's own axes.
+Give it the rubric, or it asks; without one it uses **project work**
+(planned deliverables and their outcomes), **engineering excellence
+/ better engineering** (reviews for others, security response,
+health cleanups, tooling that removes toil), **direction** and
+**people**. The skill reads the whole report, builds an evidence
+inventory, asks the few questions the report can't answer (which
+items were planned goals, invisible work like meetings chaired or
+mentoring), and drafts a narrative where every number traces back
+to the report.
 
 ```
-/self-review scratch/report-2026h1.md 2026H1
+/self-review scratch/report-2026h1.md 2026H1 [rubric.md]
 ```
 
 #### Generating the raw material

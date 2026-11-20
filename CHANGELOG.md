@@ -21,6 +21,14 @@ gone, and which GitHub numbers are a lower bound (all reviews and
 comments up to sandogasa-report 0.28; releases, fork pushes and tags
 after). The README's export command adds `--notes` and `--private`.
 
+### self-review: the evaluation's own axes
+
+The skill asks for the evaluation's rubric, or takes its path as an
+argument, and clusters under the rubric's axes. Project work,
+engineering excellence, direction and people are the default without
+one, and otherwise a catalog of kinds of work to map onto the
+rubric. Rerun `./setup.sh`: `SKILL.md` changed.
+
 ## 26.07
 
 ### New self-review skill

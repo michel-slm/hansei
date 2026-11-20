@@ -39,9 +39,11 @@ covering:
 
 1. Which of the big items were **planned deliverables** (mapped to
    team/project goals) vs self-directed? This drives the clustering.
-2. **Which axes** the evaluation actually uses (two-bucket project
-   work + better engineering, or four with direction and people) and
-   its format: length limit, form fields, first vs third person.
+2. **The evaluation's axes** and format, unless a rubric was given
+   as an input: ask for the rubric's own wording (pasted, or a path
+   to it). Its axis names and descriptions decide the clustering and
+   the headings. Also the length limit, form fields, and first vs
+   third person.
 3. **Invisible work** to include, per axis: committee/SIG leadership
    and policy work (direction), meetings chaired, mentoring and
    onboarding, talks (people), incident response — activity reports
@@ -51,6 +53,12 @@ covering:
    to this evaluation).
 
 ## Cluster along the evaluation's axes
+
+Use the evaluation's own axes, under its own names. The four below
+are the default when the user has no rubric at hand. When the rubric
+differs, use them as a catalog of kinds of work: map each kind to
+the rubric axis that fits it, ask where the fit is unclear, and
+don't rename the rubric's axes to these.
 
 **Project work** — planned deliverables and their outcomes:
 
@@ -103,7 +111,9 @@ other people's and future work better:
   review yours — which belongs under engineering excellence, not
   people.
 
-Default mapping when the evaluation only has two buckets: fold
-Direction and People into engineering excellence. When an item
-plausibly fits several axes, put it where the user's goals say it
-belongs and let the other angle be one clause, not a second entry.
+When the rubric has fewer axes, fold the extra kinds into the
+closest one; with the common two buckets (project work and
+engineering excellence), Direction and People fold into engineering
+excellence. When an item plausibly fits several axes, put it where
+the user's goals say it belongs and let the other angle be one
+clause, not a second entry.
