@@ -39,12 +39,19 @@ Known quirks — get these right or the numbers will be wrong:
   `(closed)`, which includes changes the maintainer redid
   themselves. Count merged + applied as landed; don't present
   closed ones as failures without checking.
-- **GitHub reviews and comments are a lower bound.** They come from
-  GitHub's user events API, which returns at most the 300 most recent
-  events (and, per GitHub's docs, only the last 90 days). A half-year
-  report generated after the period ends misses older reviews. Say
-  "at least N", and suggest generating reports quarterly or soon
-  after each period.
+- **GitHub's recent-events limit.** sandogasa-report 0.28 and
+  earlier read GitHub reviews, comments and the repositories counted
+  for commits from the user events API, which returns at most the
+  300 most recent events (and, per GitHub's docs, only the last 90
+  days): in such an export they are a lower bound, so say "at least
+  N", and repositories pushed to earlier in the period can be
+  missing. Later versions (sandogasa cf55a9f1) cover the whole period
+  for those, but releases, pushes to forks and tags in busy
+  repositories still come from recent data. Organizations that
+  refuse classic tokens (e.g. meta, facebookincubator) withhold
+  reviews and comments, with a warning, and their commits are simply
+  absent. Commits count on each repository's default branch only.
+  If it's unclear which version made the export, ask.
 - **Sourcehut** commits count only the addresses listed in the
   user's `git_emails`, and ticket counts appear only when the report
   is about the token owner.

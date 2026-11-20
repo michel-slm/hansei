@@ -17,3 +17,7 @@
     (the four axes, Change mining, meeting-log deep dives) are in
     `skills/self-review/axes.md`. A weekly skill would load the
     former and bring its own versions of the latter.
+  - (2026-11-19) A concrete case: a status update before a
+    planned absence covers a short period and needs a "what's in
+    flight and who has it" section, which the notes' open items
+    ("Plan: …", "Still to do: …") could feed.

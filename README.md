@@ -47,12 +47,29 @@ set that up first:
    sandogasa-report report -c config.toml --user <you> \
        -d <domain> [-d <domain> ...] \
        --since 2026-01-01 --until 2026-06-30 \
-       --detailed --detailed --by repo -o report-2026h1.md
+       --detailed --detailed --by repo --notes --private \
+       -o report-2026h1.md
    ```
 
-   GitHub review and comment counts come from an API that keeps only
-   recent events, so export soon after the period ends (or each
-   quarter) to keep them complete.
+   `--notes` adds your work notes, the reasons behind items, which
+   the skill uses for clustering and for why the work mattered.
+   `--private` keeps what a shared report leaves out: GitHub work in
+   private repositories, and notes on items the report doesn't show,
+   notes without a URL, and notes under embargo. Such an export is
+   for your own use: don't share it as is. (Both options are
+   unreleased in sandogasa-report as of 2026-11-19.)
+
+   From the release after sandogasa-report 0.28 (sandogasa cf55a9f1),
+   GitHub commit counts, reviews and PR comments cover the whole
+   period; earlier versions read them from GitHub's last 300 events
+   and miss older work. Releases, pushes to forks and tags in busy
+   repositories still come from recent data, so export within a few
+   weeks of the period's end. sandogasa-report's README lists the
+   remaining gaps.
+
+   Before drafting, look for significant items that have no note but
+   need a reason, and add notes for them
+   (`sandogasa-report note`); the 2026-11 run backfilled 53.
 
 ## Installation
 

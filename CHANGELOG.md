@@ -17,7 +17,9 @@ Item lists need `--detailed --detailed` since sandogasa-report
 `--until` one day past the half-year (it is inclusive). The skill now
 knows the per-instance Bugzilla sections, the `By repository` table,
 the `(merged)`/`(applied)`/`(closed)` PR markers, that zero rows are
-gone, and that GitHub review counts are a lower bound.
+gone, and which GitHub numbers are a lower bound (all reviews and
+comments up to sandogasa-report 0.28; releases, fork pushes and tags
+after). The README's export command adds `--notes` and `--private`.
 
 ## 26.07
 
