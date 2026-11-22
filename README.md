@@ -2,9 +2,11 @@
 
 [![AI-DECLARATION: copilot](https://img.shields.io/badge/䷼%20AI--DECLARATION-copilot-fee2e2?labelColor=fee2e2)](https://ai-declaration.md)
 
-hansei (反省, "self-reflection") is a collection of [Claude
-Code](https://claude.com/claude-code) skills for turning mechanical
-activity data into narratives written for humans.
+hansei (反省, "self-reflection") is a collection of coding-agent
+skills for turning mechanical activity data into narratives written
+for humans. They are written and tested with
+[Claude Code](https://claude.com/claude-code), and use the `SKILL.md`
+format that Codex, Gemini CLI and other agents also read.
 
 ## Skills
 
@@ -78,15 +80,25 @@ set that up first:
 Install the skills with the setup script:
 
 ```sh
-./setup.sh              # every skill
-./setup.sh self-review  # or only some
+./setup.sh                 # every skill, for Claude Code
+./setup.sh self-review     # or only some
+./setup.sh -a codex        # for another agent
 ```
 
-It copies each skill's `SKILL.md` to `~/.claude/skills/<name>/`,
-filling in this checkout's path; the files a skill loads are read
-from the checkout, so only a changed `SKILL.md` (or a moved checkout)
-needs a rerun. It replaces a symlink left by the earlier install
-instructions.
+It copies each skill's `SKILL.md` into the agent's skill directory
+(`~/.claude/skills/<name>/` for Claude Code), filling in this
+checkout's path; the files a skill loads are read from the checkout,
+so only a changed `SKILL.md` (or a moved checkout) needs a rerun. It
+replaces a symlink left by the earlier install instructions.
+
+Agents (`./setup.sh -h` lists them): `claude` (the default), `cline`,
+`codex` (OpenAI's Codex CLI), `gemini`, `goose`, `kiro-cli` and
+`opencode`. Their install paths in `agents/` come from
+[review-prompts](https://github.com/masoncl/review-prompts) (MIT
+License, see `agents/LICENSE`). Only Claude Code has been tested so
+far; reports from users of the others are welcome. goose also reads
+`~/.claude/skills`, so install for one of the two, not both, or the
+skill shows up twice.
 
 ## Layout
 

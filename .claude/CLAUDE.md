@@ -1,7 +1,9 @@
 # Project Guidelines
 
-hansei (反省 — structured self-reflection) is a collection of Claude
-Code skills for turning activity data into human narratives. Skills
+hansei (反省 — structured self-reflection) is a collection of
+coding-agent skills (developed with Claude Code, installable for
+others through `agents/`) for turning activity data into human
+narratives. Skills
 live in `skills/<name>/SKILL.md`.
 
 ## Git

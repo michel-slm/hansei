@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Install for other coding agents
+
+`./setup.sh -a <agent>` installs the skills for Cline, Codex,
+Gemini CLI, goose, Kiro CLI or opencode instead of Claude Code, the
+default. The agents' skill directories come from review-prompts.
+Only Claude Code has been tested.
+
 ### Skills split into a loader and topic files
 
 `SKILL.md` now only names the files to load and when;
