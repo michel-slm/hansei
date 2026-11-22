@@ -2,10 +2,10 @@
 #
 # Install hansei's skills for a coding agent.
 #
-# Usage: ./setup.sh [-a <agent>] [skill ...]
+# Usage: ./setup.sh <agent> [skill ...]
 #
 # Each skill lives in skills/<name>/. Its SKILL.md is copied to the
-# agent's skill directory (for Claude Code, the default,
+# agent's skill directory (for Claude Code,
 # ~/.claude/skills/<name>/SKILL.md) with {{HANSEI_DIR}} replaced by
 # this checkout's path; the other files it loads (reference/, the
 # skill's own topic files) are read from the checkout, so editing them
@@ -22,11 +22,9 @@ HANSEI_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 sed_dir="${HANSEI_DIR//\\/\\\\}"
 sed_dir="${sed_dir//&/\\&}"
 sed_dir="${sed_dir//|/\\|}"
-agent=claude
-
 usage() {
-    echo "Usage: $0 [-a <agent>] [skill ...]"
-    echo "Install hansei skills for a coding agent (default: claude)."
+    echo "Usage: $0 <agent> [skill ...]"
+    echo "Install hansei skills for a coding agent."
     echo "Agents:"
     for f in "$HANSEI_DIR"/agents/*.sh; do
         f=$(basename "$f")
@@ -38,16 +36,13 @@ usage() {
     done
 }
 
-while [ $# -gt 0 ]; do
-    case $1 in
-        -h|--help) usage; exit 0 ;;
-        -a) [ $# -ge 2 ] || { usage >&2; exit 1; }; agent=$2; shift 2 ;;
-        -a*) agent=${1#-a}; shift ;;
-        --) shift; break ;;
-        -*) echo "Error: unknown option: $1" >&2; usage >&2; exit 1 ;;
-        *) break ;;
-    esac
-done
+case ${1:-} in
+    -h|--help) usage; exit 0 ;;
+    "") echo "Error: name the agent to install for" >&2; usage >&2; exit 1 ;;
+    -*) echo "Error: unknown option: $1" >&2; usage >&2; exit 1 ;;
+esac
+agent=$1
+shift
 
 agent_script="$HANSEI_DIR/agents/$agent.sh"
 if [ ! -f "$agent_script" ]; then

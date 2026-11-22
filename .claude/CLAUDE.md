@@ -33,6 +33,6 @@ live in `skills/<name>/SKILL.md`.
 - Each topic file starts with a `## When to Load` section
 
 ## Dogfooding
-- Install with `./setup.sh` (all skills, or name them). Rerun it after
-  changing a `SKILL.md` or moving the checkout; the other files are read
-  from the checkout
+- Install with `./setup.sh claude` (all skills, or name them after
+  the agent). Rerun it after changing a `SKILL.md` or moving the
+  checkout; the other files are read from the checkout

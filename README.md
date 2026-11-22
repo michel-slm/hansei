@@ -80,9 +80,9 @@ set that up first:
 Install the skills with the setup script:
 
 ```sh
-./setup.sh                 # every skill, for Claude Code
-./setup.sh self-review     # or only some
-./setup.sh -a codex        # for another agent
+./setup.sh claude              # every skill, for Claude Code
+./setup.sh claude self-review  # or only some
+./setup.sh codex               # for OpenAI's Codex CLI
 ```
 
 It copies each skill's `SKILL.md` into the agent's skill directory
@@ -91,7 +91,7 @@ checkout's path; the files a skill loads are read from the checkout,
 so only a changed `SKILL.md` (or a moved checkout) needs a rerun. It
 replaces a symlink left by the earlier install instructions.
 
-Agents (`./setup.sh -h` lists them): `claude` (the default), `cline`,
+Agents (`./setup.sh -h` lists them): `claude`, `cline`,
 `codex` (OpenAI's Codex CLI), `gemini`, `goose`, `kiro-cli` and
 `opencode`. Their install paths in `agents/` come from
 [review-prompts](https://github.com/masoncl/review-prompts) (MIT

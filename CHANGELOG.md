@@ -4,18 +4,19 @@
 
 ### Install for other coding agents
 
-`./setup.sh -a <agent>` installs the skills for Cline, Codex,
-Gemini CLI, goose, Kiro CLI or opencode instead of Claude Code, the
-default. The agents' skill directories come from review-prompts.
-Only Claude Code has been tested.
+`./setup.sh <agent>` installs the skills for Claude Code (`claude`),
+Cline, Codex, Gemini CLI, goose, Kiro CLI or opencode, as
+review-prompts' setup does; the agents' skill directories come from
+it. Only Claude Code has been tested.
 
 ### Skills split into a loader and topic files
 
 `SKILL.md` now only names the files to load and when;
 sandogasa-report knowledge shared between skills moved to
-`reference/`. Install with `./setup.sh` instead of symlinking the
-skill directory: the loader needs this checkout's path filled in.
-Rerun it after pulling a change to a `SKILL.md`.
+`reference/`. Install with `./setup.sh <agent>` (e.g.
+`./setup.sh claude`) instead of symlinking the skill directory: the
+loader needs this checkout's path filled in. Rerun it after pulling
+a change to a `SKILL.md`.
 
 ### self-review: current sandogasa-report output
 
@@ -34,7 +35,7 @@ The skill asks for the evaluation's rubric, or takes its path as an
 argument, and clusters under the rubric's axes. Project work,
 engineering excellence, direction and people are the default without
 one, and otherwise a catalog of kinds of work to map onto the
-rubric. Rerun `./setup.sh`: `SKILL.md` changed.
+rubric. Rerun `./setup.sh <agent>`: `SKILL.md` changed.
 
 ## 26.07
 
