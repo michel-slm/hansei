@@ -10,7 +10,7 @@ activity data into narratives written for humans.
 
 ### self-review
 
-Turns a [sandogasa-report](https://github.com/slopfest/sandogasa)
+Turns a [sandogasa-report](https://github.com/michel-slm/sandogasa)
 markdown export into a first-person self-review narrative for a
 performance evaluation, clustered along the evaluation's own axes.
 Give it the rubric, or it asks; without one it uses **project work**
@@ -30,7 +30,7 @@ to the report.
 #### Generating the raw material
 
 The skill works from a
-[sandogasa-report](https://github.com/slopfest/sandogasa) export, so
+[sandogasa-report](https://github.com/michel-slm/sandogasa) export, so
 set that up first:
 
 1. Run `sandogasa-report config -c <config.toml>` once — it walks
