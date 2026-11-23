@@ -30,3 +30,15 @@ file** (`-pass2`, `-pass3`, …) — never overwrite an earlier pass, so
 the user can diff passes and recover dropped phrasing. Expect wording
 rounds: this text goes in front of the user's management, so the user
 has final say on every claim.
+
+Start every pass file with an `Evidence: <export file>` line naming
+the report it was written from. Before writing a pass, after a
+context compaction reread `reference/evidence.md` and this file,
+then check:
+
+- No export is newer (by modification time) than the one the
+  `Evidence:` line names. If one is, take the numbers from it, or
+  keep the older one and say why on that line.
+- Every merge point in the inventory has a
+  `*[note for the internal pass: …]*` placeholder, and none is
+  written around.

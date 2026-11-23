@@ -16,6 +16,10 @@ Before writing, list (for your own use, or show the user on request):
   requests submitted), major version migrations, upstream PRs with
   real substance, reviews done for other people.
 - Anything security-shaped: CVE closures, RUSTSEC responses.
+- Merge points: items whose evidence or story lives outside the
+  report (a write-up on an internal site, work that landed by being
+  resubmitted through another system). List each one; the draft
+  marks each with a placeholder (see the end of this file).
 
 ### Reviews done for others
 
@@ -54,5 +58,5 @@ when a dependency can be spelled several ways (package name vs
 
 When the narrative will later be merged with material you cannot see
 (e.g. company-internal work), leave explicitly marked placeholders —
-*[note for the internal pass: …]* — at the merge points instead of
-writing around them.
+*[note for the internal pass: …]* — at the merge points listed in the
+inventory instead of writing around them.

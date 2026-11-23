@@ -13,7 +13,9 @@ dump.
 ## Inputs
 
 - **Report path**: from args; otherwise use the newest
-  `scratch/report-*.md` and confirm the choice with the user.
+  `scratch/report-*.md` by modification time (not by name) and
+  confirm the choice with the user. If a newer export of the same
+  period sits next to the one given, say so and ask which to use.
   The skill needs the individual items, which since sandogasa-report
   0.24.0 means a `--detailed --detailed` export; a single
   `--detailed` now gives only counts per repo or component. (Older

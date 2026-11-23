@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### self-review: newest export, marked merge points
+
+Each pass file now starts with an `Evidence:` line naming its
+export, and before each pass the skill checks that no newer export
+exists and that every merge point has an internal-pass placeholder.
+The inventory lists merge points (items whose story lives outside
+the report), and without a path the newest export is picked by
+modification time. Resolves #2 and #3.
+
 ### self-review: classify reviews before drafting
 
 The FE-NEEDSPONSOR check (does a review block bug 177841?) is now a
