@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### self-review: classify reviews before drafting
+
+The FE-NEEDSPONSOR check (does a review block bug 177841?) is now a
+step of the evidence inventory, run in batched Bugzilla queries
+before clustering, instead of a note in the People axis, where it
+was easy to skip until late in the revisions. The inventory also
+counts later reviews for the same new packager with the first, and
+sends ids in groups of 20, the most Red Hat Bugzilla returns per
+request.
+
 ### Install for other coding agents
 
 `./setup.sh <agent>` installs the skills for Claude Code (`claude`),

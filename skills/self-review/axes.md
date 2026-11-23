@@ -98,12 +98,14 @@ other people's and future work better:
 - Talks, demos, and written knowledge-sharing (a talk may only be
   visible as slide commits — ask).
 - Reviews count as mentoring/onboarding **only when the requester is
-  demonstrably new** — verify before claiming. For Fedora the
-  mechanical check: a review request that **blocks the
-  FE-NEEDSPONSOR tracker (bug 177841)** comes from a packager with
-  no sponsor yet — reviewing (and sponsoring) those is
-  definitionally onboarding; query the review bugs' `blocks` field
-  via the Bugzilla REST API. Fallback heuristic: the requester's FAS
+  demonstrably new** — verify before claiming. For Fedora, the
+  evidence inventory classifies the reviews before drafting
+  (`reference/evidence.md`, Reviews done for others): a review
+  request that **blocks the FE-NEEDSPONSOR tracker (bug 177841)**
+  comes from a packager with no sponsor yet — reviewing (and
+  sponsoring) those is definitionally onboarding. If the inventory
+  lacks that classification, run the query now; ask the user only
+  when it can't run. Fallback heuristic: the requester's FAS
   group memberships / existing package access (a seasoned SIG
   member's stack review is not onboarding). Unverified, the honest
   framing is that reviews *unblock others* and build reciprocity —

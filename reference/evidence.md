@@ -16,6 +16,26 @@ Before writing, list (for your own use, or show the user on request):
   requests submitted), major version migrations, upstream PRs with
   real substance, reviews done for other people.
 - Anything security-shaped: CVE closures, RUSTSEC responses.
+
+### Reviews done for others
+
+Classify these before clustering: whether a review counts as
+onboarding decides its axis (`axes.md`, People). For Fedora package
+reviews:
+
+- Fetch every review bug's `blocks` and requester in batched calls:
+  `https://bugzilla.redhat.com/rest/bug?id=<id>,<id>,...&include_fields=id,summary,blocks,creator,status,resolution`.
+  Red Hat Bugzilla returns at most 20 bugs per request, whatever
+  `limit` says (checked 2026-11-23), so send the ids in groups of
+  20. Compare the number of bugs returned with the number asked
+  for, and query the missing ids again.
+- A review that blocks the FE-NEEDSPONSOR tracker (bug 177841) comes
+  from a packager with no sponsor yet. Record it with the requester.
+- Later reviews for the same packager count with the first, though
+  they no longer block 177841 once the packager is sponsored.
+- Ask the user which reviews were for new packagers only when the
+  query can't run.
+
 ## Never invent; verify what can be verified
 
 Every number and link in the final narrative must come from this
