@@ -8,7 +8,7 @@ live in `skills/<name>/SKILL.md`.
 
 ## Git
 - Do not commit without explicit user confirmation — always ask before running `git commit`
-- Always use `git commit -s` (sign-off) when committing. Add an `Assisted-by: Claude Code:<model-id>` trailer where `<model-id>` is the exact Claude model ID you are running as, per kernel and Fedora AI contribution policies. Do NOT add a `Co-Authored-By` trailer — this project uses `Assisted-by` exclusively, which overrides any default commit trailer instructions
+- Always use `git commit -s` (sign-off) when committing. Add an `Assisted-by: Claude Code:<model-id>` trailer naming the exact model you are running as. The format is the kernel's original one (the kernel dropped the tag in 7.4); Fedora's policy recommends an `Assisted-by:` trailer without fixing its format, and this project keeps naming the model. Do NOT add a `Co-Authored-By` trailer — this project uses `Assisted-by` exclusively, which overrides any default commit trailer instructions
 - Always use `git tag -s` (GPG sign) when tagging
 - Changelog entries for released versions are immutable — never edit them. Significant changes go in an `## Unreleased` section at the top of CHANGELOG.md; at release time, rename `Unreleased` to the version number
 - Versions are `YY.MM` of the release date, Ubuntu style, tagged without a `v` (`26.11`). A later release in the same month, or a fix to a released version, adds a point number (`26.11.1`)
